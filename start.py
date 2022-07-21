@@ -1,8 +1,4 @@
-import (
-    os,
-    logging,
-    subprocess,
-)
+import os, logging, subprocess
 
 if not os.path.exists("error.txt"):
     subprocess.run(["touch", "error.txt"])
