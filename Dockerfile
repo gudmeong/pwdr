@@ -1,9 +1,9 @@
-FROM gengkapak/noc
+FROM gengkapak/app:latest
 
-WORKDIR /home/gengkapak/dclxvi/
+WORKDIR /home/cok/
 
-RUN chmod 777 /home/gengkapak/dclxvi/ \
-    && mkdir /home/gengkapak/dclxvi/bin/
+RUN chmod 777 /home/cok/ \
+    && mkdir /home/cok/bin/
 COPY . .
 
 CMD ["bash", "start.sh"]
