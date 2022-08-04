@@ -1,13 +1,13 @@
 import os, logging, subprocess
 
-if not os.path.exists("error.txt"):
-    subprocess.run(["touch", "error.txt"])
-    with open("error.txt", "r+") as a:
+if not os.path.exists("crash.txt"):
+    subprocess.run(["touch", "crash.txt"])
+    with open("crash.txt", "r+") as a:
         a.truncate(0)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("error.txt"), logging.StreamHandler()],
+    handlers=[logging.FileHandler("crash.txt"), logging.StreamHandler()],
     level=logging.INFO,
 )
 
@@ -31,6 +31,6 @@ if UPSTREAM_REPO_URL is not None:
         shell=True,
     )
     if start.returncode == 0:
-        logging.info(f"Successfully update from upstream repo with branch > {BRANCH}")
+        logging.info(f"Successfully update from upstream repo with > {UPSTREAM_REPO_URL} {BRANCH}")
     else:
         logging.error("Something gonna wrong!")

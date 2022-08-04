@@ -1,9 +1,9 @@
-FROM biansepang/weebproject:buster
+FROM gengkapak/noc
 
-WORKDIR /home/weebproject
+WORKDIR /home/gengkapak/dclxvi/
 
-RUN chmod 777 /home/weebproject \
-    && mkdir /home/weebproject/bin/
+RUN chmod 777 /home/gengkapak/dclxvi/ \
+    && mkdir /home/gengkapak/dclxvi/bin/
 COPY . .
 
 CMD ["bash", "start.sh"]
